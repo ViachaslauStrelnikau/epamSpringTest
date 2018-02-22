@@ -1,0 +1,40 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.sprin gframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                           http://www.springframework.org/schema/util
+                           http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+
+    <bean id="Dima" class="epam.spring.test.simpleMan" />
+    <bean id="Vasia" class="epam.spring.test.Superman" />
+    <bean id="Petia" class="epam.spring.test.Programist">
+        <property name="name" value="Petr"/>
+        <property name="skill" value="java"/>
+        <property name="likeCoffee" value="false"/>
+
+    </bean>
+    <bean id="Kolia" class="epam.spring.test.Programist">
+        <constructor-arg name="name" value="Nikolai" />
+        <constructor-arg name="skill" value="C++" />
+        <constructor-arg name="likeCoffee" value="true" />
+
+    </bean>
+
+    <bean id="Olia" class="epam.spring.test.simpleManwFriend">
+        <property name="name" value="Olia"/>
+        <property name="friend" ref="Kolia"/>
+    </bean>
+    <bean id="Coolmanager" class="epam.spring.test.Manager">
+        <constructor-arg name="name" value="Boss"/>
+        <property name="emails" >
+            <list>
+                <value type="java.lang.String">"Dfsdfsdf@asd.asd"</value>
+                <value>"adasdasdasd@asdasd"</value>
+            </list>
+        </property>
+    </bean>
+</beans>
